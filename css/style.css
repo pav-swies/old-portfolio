@@ -22,6 +22,31 @@
 }
 
 /* colours */
+/* rotation */
+.rotated-home {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+@media screen and (min-width: 1000px) {
+  .rotated-home {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+}
+
+.rotated-blog-card {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+@media screen and (min-width: 1280px) {
+  .rotated-blog-card {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+}
+
 /* ---------- */
 html {
   font-family: 'Heebo';
@@ -221,7 +246,6 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
 .home {
   width: 100%;
   margin: auto;
-  overflow: hidden;
   max-width: 700px;
 }
 
@@ -388,8 +412,6 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   grid-gap: 0.5em;
   padding: 1em 0;
   max-width: 350px;
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
 }
 
 .blog__card .blog__card-title {
@@ -914,10 +936,6 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   .home {
     padding: 2em 5em 0 0;
   }
-  .home .home__wrapper {
-    -webkit-transform: rotate(-25deg);
-            transform: rotate(-25deg);
-  }
   p {
     font-size: 1.2rem;
   }
@@ -948,13 +966,6 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   .cv__wrapper .cv__skills {
     -ms-grid-row: 3;
     grid-row: 3;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .blog__card {
-    -webkit-transform: rotate(-20deg);
-            transform: rotate(-20deg);
   }
 }
 /*# sourceMappingURL=style.css.map */
