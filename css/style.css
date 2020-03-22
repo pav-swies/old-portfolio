@@ -640,7 +640,6 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
 .blog-post__text {
   border-bottom: 1px solid #1c1c1c;
   border-top: 1px solid #1c1c1c;
-  padding: 1em 1em;
 }
 
 .blog-post__intro {
