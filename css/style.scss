@@ -509,7 +509,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
     background-color: $black;
     color: $yellow;
     width: 100%;
-    resize: none;
+    max-width: 100%;
 }
 
 .form__text:focus {

@@ -599,7 +599,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   background-color: #1c1c1c;
   color: #fffdd9;
   width: 100%;
-  resize: none;
+  max-width: 100%;
 }
 
 .form__text:focus {
