@@ -26,6 +26,10 @@ $yellow: #fffdd9;
 $dark-yellow: #a5a136;
 $black: #1c1c1c;
 
+/* rotation */
+
+$rotation: rotate(-25deg)
+
 /* ---------- */
 
 html {
@@ -834,7 +838,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
         padding: 2em 5em 0 0;
 
         .home__wrapper {
-            transform: rotate(-25deg);
+            transform: $rotate;
         }
     }
 
@@ -873,6 +877,6 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
 
 @media only screen and (min-width: 1280px) {
     .blog__card {
-        transform: rotate(-20deg);
+        transform: $rotate;
     }
 }
