@@ -78,23 +78,23 @@
                         <p class="blog-post__intro"><span class="blog-post__dropcap">O</span>ptimisation is important to make sure that the website is fast and smooth. I optimized my website in various ways. First of all, I made sure that all images are JPEG files as they are small file sizes without too much noticeable compression (Diaz, 2018). The resolution of the images doesn’t go above their maximum display size on the website, which also keeps the file size down.</p>
                         <p class="blog-post__p">When I started using Sass, I got into a habit of nesting too much. One reason nesting too much is not good is that it starts to cause CSS Specificity issues, especially in media queries. Another issue with this is that it can significantly increase file size since the compiled CSS will mention every parent of every element. </p>
                         <div class="blog-post__frame">
-                            <img class="blog-post__image" alt="website layout design" src="../../img/sass-deep-nest.jpg">
+                            <img class="blog-post__image" alt="sass css code that uses too much nesting" src="../../img/sass-deep-nest.jpg">
                             <p class="blog-post__caption">Sass that is very deeply nested</p>
                         </div>
                         <p class="blog-post__p">When Sass compiles this into CSS, the class name looks like this:</p>
                         <div class="blog-post__frame">
-                            <img class="blog-post__image" alt="website layout design" src="../../img/css-compiled.jpg">
+                            <img class="blog-post__image" alt="sass code that has been compiled into normal css" src="../../img/css-compiled.jpg">
                             <p class="blog-post__caption">Compiled CSS after a lot of Sass nesting</p>
                         </div>
                         <p class="blog-post__p">The class name is far longer than it needs to be because each parent is also specified. This adds a lot of unnecessary code to the file. Because of my bad nesting habit, the CSS file size was 16KB halfway through development. I re-wrote everything and removed the excessive nesting, and when the entire website was finished, the compiled CSS file size was even smaller at 15KB.</p>
                         <p class="blog-post__p">I also optimized fonts with font preloading, which “ensures they are available earlier and are less likely to block the page's render, improving performance” (MDN, 2019). Since I chose to host the fonts, I chose the ‘woff’ (Web Open Font Format) as it is widely supported and the file size is very small (MDN, 2019)</p>
                         <div class="blog-post__frame">
-                            <img class="blog-post__image" alt="website layout design" src="../../img/preload.jpg">
+                            <img class="blog-post__image" alt="link tags in the head of the html file that define the preload settings for the fonts" src="../../img/preload.jpg">
                             <p class="blog-post__caption">Preload tag in HTML for the fonts</p>
                         </div>
                         <p class="blog-post__p">Using @font-face, I define the font and where it can be found. The ‘src: local’ looks for the font on the user’s machine to avoid downloading it again for no reason. If the font can’t be found locally, the ‘url’ tells the browser where it can download the font from.</p>
                         <div class="blog-post__frame">
-                            <img class="blog-post__image" alt="website layout design" src="../../img/font-face.jpg">
+                            <img class="blog-post__image" alt="css @font-face used to set the font settings" src="../../img/font-face.jpg">
                             <p class="blog-post__caption">Font Face property in CSS</p>
                         </div>
                         <p class="blog-post__p">The ‘uncode-range’ tells the browser to only load the required glyph range (reference - freecodecamp).</p>
@@ -112,7 +112,7 @@
                         </div>
                         <p class="blog-post__p">I used Schema.org vocabulary because that’s what most search engines use (Google Developers, no date). To make sure that it works properly, I used the Google Structured Data Testing Tool. Below you can see the information Google can see from my home page:</p>
                         <div class="blog-post__frame">
-                            <img class="blog-post__image" alt="code using BEM naming convention" src="../../img/google-structured-data-test.jpg">
+                            <img class="blog-post__image" alt="Google Structured Data Testing Tool Results" src="../../img/google-structured-data-test.jpg">
                             <p class="blog-post__caption">Google Structured Data Testing Tool Results</p>
                         </div>
                         <p class="blog-post__p">It can take a few weeks before the search results begin showing up. </p>
