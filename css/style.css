@@ -382,7 +382,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   display: grid;
   -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 5em;
+  grid-gap: 4em;
 }
 
 .blog__title {
@@ -414,7 +414,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   max-width: 350px;
 }
 
-.blog__card .blog__card-title {
+.blog__card-title {
   -ms-grid-column: 2;
   grid-column: 2;
   -ms-grid-row: 1;
@@ -422,9 +422,10 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   text-transform: uppercase;
   font-size: 2rem;
   border-top: 3px solid #fffdd9;
+  word-break: break-all;
 }
 
-.blog__card .blog__card-date {
+.blog__card-date {
   -ms-grid-column: 1;
   grid-column: 1;
   -ms-grid-row: 1;
@@ -437,7 +438,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   margin-right: 0.5em;
 }
 
-.blog__card .blog__card-text {
+.blog__card-text {
   -ms-grid-column: 2;
   grid-column: 2;
   -ms-grid-row: 2;
@@ -445,7 +446,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   line-height: 160%;
 }
 
-.blog__card .blog__card-link {
+.blog__card-link {
   -ms-grid-column: 2;
   grid-column: 2;
   -ms-grid-row: 3;
@@ -459,7 +460,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   border-bottom: 3px solid #fffdd9;
 }
 
-.blog__card .blog__card-link:hover {
+.blog__card-link:hover {
   color: #a5a136;
 }
 

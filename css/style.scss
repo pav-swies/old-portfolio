@@ -313,7 +313,7 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
 .blog__card-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 5em;
+    grid-gap: 4em;
 }
 
 .blog__title {
@@ -340,44 +340,46 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
     grid-gap: 0.5em;
     padding: 1em 0;
     max-width: 350px;
+}
 
-    .blog__card-title {
-        grid-column: 2;
-        grid-row: 1;
-        text-transform: uppercase;
-        font-size: 2rem;
-        border-top: 3px solid $yellow;
-    }
-    .blog__card-date {
-        grid-column: 1;
-        grid-row: 1;
-        font-weight: 900;
-        writing-mode: vertical-lr;
-        border-right: 10px $yellow solid;
-        margin-right: 0.5em;
-    }
+.blog__card-title {
+    grid-column: 2;
+    grid-row: 1;
+    text-transform: uppercase;
+    font-size: 2rem;
+    border-top: 3px solid $yellow;
+    word-break: break-all;
+}
 
-    .blog__card-text {
-        grid-column: 2;
-        grid-row: 2;
-        line-height: 160%;
-    }
+.blog__card-date {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 900;
+    writing-mode: vertical-lr;
+    border-right: 10px $yellow solid;
+    margin-right: 0.5em;
+}
 
-    .blog__card-link {
-        grid-column: 2;
-        grid-row: 3;
-        text-transform: uppercase;
-        text-decoration: underline;
-        font-weight: 900;
-        font-size: 1.2rem;
-        color: $yellow;
-        padding: 1em 0;
-        border-bottom: 3px solid $yellow;
-    }
+.blog__card-text {
+    grid-column: 2;
+    grid-row: 2;
+    line-height: 160%;
+}
 
-    .blog__card-link:hover {
-        color: $dark-yellow;
-    }
+.blog__card-link {
+    grid-column: 2;
+    grid-row: 3;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: $yellow;
+    padding: 1em 0;
+    border-bottom: 3px solid $yellow;
+}
+
+.blog__card-link:hover {
+    color: $dark-yellow;
 }
 
 /*-------------------------------blog-end------------------------------*/
