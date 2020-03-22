@@ -549,6 +549,10 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
     width: 100%;
     margin: 2em auto;
     max-width: 800px;
+
+    a {
+        color: black;
+    }
 }
 
 .blog-post__wrapper {

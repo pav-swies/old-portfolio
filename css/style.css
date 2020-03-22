@@ -645,6 +645,10 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   max-width: 800px;
 }
 
+.blog-post a {
+  color: black;
+}
+
 .blog-post__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
