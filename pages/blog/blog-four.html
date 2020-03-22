@@ -12,6 +12,7 @@
     <link rel="preload" as="font" href="../../fonts/Heebo-Regular.woff" type="font/woff" crossorigin="anonymous">
     <link rel="preload" as="font" href="../../fonts/Heebo-Black.woff" type="font/woff" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="/css/prism.css">
     <script type="application/ld+json">
         {
             "@context":"http://schema.org",
@@ -80,8 +81,29 @@
                         <p class="blog-post__p">Before touching the code, I created a <a href="https://github.com/pav-swies/old-portfolio">repository</a> for the website on GitHub and added the files to it. Not only does it mean that the site is now safely backed up online, but it also makes it easy to keep track of any changes I’ve made to it by looking at the commits. Each commit has a message explaining what the change does, and shows exactly what code has been added or removed. Each commit can also be downloaded into the project again, making it easy to roll back to a previous version of the website if needed <a href="https://www.smashingmagazine.com/2011/07/modern-version-control-with-git-series/">(Gunther, 2011)</a>.</p>
                         <h3 class="blog-post__heading2">Rotation</h3>
                         <p class="blog-post__p">The rotated sections on the page were supposed to have the same rotation angle across all pages, however the angle slightly varied on different elements. To solve this, I the rotated elements now use a Sass variable so that the angle is always the same. This also makes it easier to change the angle in the future, since only the variable needs to be changed. The rotation and its animation was also purely controlled through CSS. This was problematic as the rotation animation didn’t always play when the page loaded, and because the transition was added the entire block,  it meant that everything inside of that block was also animated. This looked ugly when the animation first played because the colours and other styling faded in as the transition happened. To get around this, I added JavaScript that adds a rotation class to the element when the page is loaded, which means that the animation now always plays when the user enters the site. I also removed the transition from all rotated elements and simply added it to the rotation class. Thanks to this, only the rotation is animated rather than the entire block and its children.</p>
-                        <p class="blog-post__p">There were many small fixes that were needed.  The social links in the footer were simply wrapped in a div tag, however they were part of the footer navigation, so I added the links to the nav wrapper that also wraps the page navigation. This improves overall semantics which helps with accessibility as screen readers will now include the social links as part of the navigation, but semantic HTML also improves search engine optimisation <a href="https://onextrapixel.com/html5-semantics-better-seo/">(OXP, 2019)</a>.</p>
+                        <p class="blog-post__p">Here is the JavaScript that adds the rotation CSS class:</p>
+                        <pre><code class="language-js">
+const homePage = document.querySelector('.home');
+const blogCard = document.querySelectorAll('.blog__card');
+
+function rotationBlog() { 
+    blogCard.forEach(blogCard => {
+        blogCard.classList.add('rotated-blog-card')
+    })
+}
+
+function rotationHome() {
+    homePage.classList.add('rotated-home');
+}
+
+
+window.onload = function rotation() {
+    this.rotationBlog();
+    this.rotationHome();
+}
+                        </code></pre>
                         <h3 class="blog-post__heading2">Other Small Changes</h3>
+                        <p class="blog-post__p">The social links in the footer were simply wrapped in a div tag, however they were part of the footer navigation, so I added the links to the nav wrapper that also wraps the page navigation. This improves overall semantics which helps with accessibility as screen readers will now include the social links as part of the navigation, but semantic HTML also improves search engine optimisation <a href="https://onextrapixel.com/html5-semantics-better-seo/">(OXP, 2019)</a>.</p>
                         <p class="blog-post__p">I adjusted the line height on the headings of the blog cards to make it a little tighter, as shorter line lengths should have shorter line height to improve visual vertical rhythm <a href="https://betterwebtype.com/articles/2018/10/15/rhythm-in-web-typography/">(Latin, 2018)</a>.</p>
                         <p class="blog-post__p">I also changed the blog ‘read more’ link to an arrow to help indicate that the card leads to another page. I also wrapped the card in an anchor tag to make the whole card clickable making it easier to open, especially on mobile devices.</p>
                         <p class="blog-post__p">All of the changes mentioned in this post and more can be viewed on the <a href="https://github.com/pav-swies/old-portfolio"> GitHub repository</a>. While little has changed visually, a lot has changed technically. This improves the overall quality of the website and makes for a better user experience. </p>
@@ -120,5 +142,6 @@
             </footer>
         
     </div>
+    <script src="/js/prism.js"></script>
 </body>
 </html>
