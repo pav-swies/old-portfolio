@@ -413,6 +413,13 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   grid-gap: 0.5em;
   padding: 1em 0;
   max-width: 350px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog__card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .blog__card-title {
@@ -454,12 +461,9 @@ body, header, nav, ul, li, p, a, h1, h2, h3, h4 {
   grid-column: 2;
   -ms-grid-row: 3;
   grid-row: 3;
-  text-transform: uppercase;
-  text-decoration: underline;
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 3rem;
   color: #fffdd9;
-  padding: 1em 0;
   border-bottom: 3px solid #fffdd9;
 }
 
