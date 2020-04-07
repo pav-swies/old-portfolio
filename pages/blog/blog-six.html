@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="I will soon be graduating and looking for work as a web developer. I take a look at the current state of the industry and talk about my concerns." />
+    <meta name="keywords" content="HTML,CSS,Sass,Web Industry,Brexit,Developer,Designer" />
+    <meta name="author" content="Pawel Swies" />
+    <title>JAMstack Site with a CMS</title>
+    <link rel="preload" href="../../css/style.css" as="style" />
+    <link rel="preload" as="font" href="../../fonts/Heebo-Regular.woff" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" as="font" href="../../fonts/Heebo-Black.woff" type="font/woff" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="/css/prism.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "image": "https://17083809.webdevmmu.uk/portfolio/img/google-structured-data-test.jpg",
+        "url": "https://17083809.webdevmmu.uk/portfolio/pages/index.html",
+        "headline": "JAMstack Site with a CMS",
+        "dateCreated": "2019-10-28",
+        "datePublished": "2019-10-28",
+        "dateModified": "2019-11-12",
+        "copyrightYear": "2019",
+        "author": {
+          "@type": "Person",
+          "name": "Pawel Swies",
+          "url": "https://17083809.webdevmmu.uk/index.html"
+        },
+        "creator": {
+          "@type": "Person",
+          "name": "Pawel Swies",
+          "url": "https://17083809.webdevmmu.uk/index.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pawel Swies",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://17083809.webdevmmu.uk/img/portrait.jpg"
+          }
+        },
+        "mainEntityOfPage": "True",
+        "keywords": ["web industry", "brexit", "web design", "statistics"],
+        "genre": ["web industry"]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="global__wrapper global__wrapper--light">
+      <header class="global-header">
+        <div class="global-header__wrapper">
+          <p class="global-header__title">Pawel Swies</p>
+          <nav class="global-header__navigation">
+            <ul class="global-header__list">
+              <li class="global-header__item">
+                <a class="global-header__link" href="../../index.html">Home</a>
+              </li>
+              <li class="global-header__item">
+                <a class="global-header__link" href="blog.html">Blog</a>
+              </li>
+              <li class="global-header__item">
+                <a class="global-header__link" href="../work/work.html">Work</a>
+              </li>
+              <li class="global-header__item">
+                <a class="global-header__link" href="../contact/contact.html">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="blog-post">
+        <div class="blog-post__wrapper">
+          <h2 class="blog-post__title">JAMstack Site with a CMS</h2>
+          <p class="blog-post__date">06/04/2020</p>
+
+          <div class="blog-post__text">
+            <p>Demonstrator: <a href="https://jamstackforbeginners.netlify.com/">jamstackforbeginners.netlify.com</a></p>
+            <p class="blog-post__intro">
+              <span class="blog-post__dropcap">A</span>s continuation of my Hugo website project, I looked into making it a JAMstack page and adding a content management to it. In this blog post I
+              will explain what the JAMstack is, its benefits and how I set my site up to use it. I will also explain the process of implementing a static contemnt management to a static site. Along
+              side of this project, I also created a <a href="https://jamstackforbeginners.netlify.com/">website</a> that helps beginners create their own JAMstack site.
+            </p>
+            <h2 id="what-is-the-jamstack">What is the JAMstack?</h2>
+
+            <p>
+              The JAMstack is a differnet way of serving a website compared to another common stack, for example the LAMP stack
+              <a href="https://www.liquidweb.com/kb/what-is-a-lamp-stack/">(Potter, 2019)</a>. A common way of serving a website is by having it live on a server, and every time a user opens the site,
+              a request is sent to the server. The server then grabs content from the database, then builds the site and sends it back to the user. In contrast, a JAMstack website does not rely on a
+              webserver because it&rsquo;s static. The website is pre-built, and is simply served to the user directly from a content delivery network.
+            </p>
+
+            <h3 id="why-is-this-better">Why is this better?</h3>
+
+            <p>
+              Since the sites are pre-rendered, the loading times are much faster compared to a traditional website on a server <a href="https://jamstack.org/">(Jamstack, no date)</a>. JAMstack
+              removes the need for all of the moving parts a dynamic site requires, like a load balancer, web server, database etc. Not relying on these extra moving parts removes the possibility of a
+              security breach on the webservers and databases, and makes hosting much cheaper <a href="https://jamstack.wtf/">(JAMstack WTF, no date)</a>. A static site simply needs to be served from
+              a content delivery network. This also makes developing a JAMstack website a better experience. Services like <a href="https://www.netlify.com/">Netlify</a> even offer free hosting which
+              is perfect for small or personal sites on a budget.
+            </p>
+
+            <h3 id="what-about-the-name">What about the name?</h3>
+
+            <ul>
+              <li><strong>J</strong>avascript - Used for progressive interactivity. Since there is no server, the scripts aren&rsquo;t ran on the server. The browser acts as the runtime.</li>
+              <li><strong>A</strong>PIs - Used for external dynamic data access.</li>
+              <li><strong>M</strong>arkup - Used for static content to be generated from.</li>
+            </ul>
+
+            <p>A JAMstack website doesn&rsquo;t need all of these to be a JAMstack site. Not all websites will have interactivity through JavaScript or external data passed into them through APIs.</p>
+
+            <h2 id="how-it-works">How it works</h2>
+
+            <p>Since the website is prerendered, it needs to be located somewhere where a CDN (Content Delivery Network) can access it. This is typically a Git repository.</p>
+
+            <p>
+              For my JAMstack site, I uploaded the site to a <a href="https://github.com/pav-swies/pawelswies.com">GitHub repository</a>, then imported it into
+              <a href="https://www.netlify.com/">Netlify</a>. I used a static site generator called Hugo to make my site, and since Netlify works with Hugo by default, it&rsquo;s very easy to get it
+              running.
+            </p>
+
+            <h3 id="static-website-generators">Static Website Generators</h3>
+
+            <p>
+              Static site generators create their own source files then convert/build them into a static website. SSG&rsquo;s have many very useful features that allow for a more powerful site. There
+              are many static site generators to choose from; <a href="https://www.staticgen.com/">staticgen.com</a> is a great website with a huge list of SSG&rsquo;s you could use. For my personal
+              JAMstack site, I used Hugo and found it to be really good to work with. You can read my blog about
+              <a href="https://www.pawelswies.com/using-a-static-site-generator-hugo/">using Hugo here.</a>
+            </p>
+
+            <p>
+              Again, you do not have to use a static site generator for it to be a static website serverd by a CDN. It&rsquo;s also important to note that just because it&rsquo;s a
+              &ldquo;static&rdquo; website, it does not mean that the experience has to be static. Using JavaScript there are many things that can be done to create a dynamic experience.
+            </p>
+
+            <h3 id="using-netlify-cdn">Using Netlify CDN</h3>
+
+            <p>
+              To host a website on Netlify, simply make an account, then sign in to GitHub and select the repository and branch your site is in. All that&rsquo;s left to do is to give it a name, and
+              it&rsquo;s ready. Netlify will automatically give you a domain and your site will now be live.
+            </p>
+
+            <h3 id="automated-builds">Automated builds</h3>
+
+            <p>
+              Every time a change is uploaded to the GitHub repo, Netlify will automatically run the Hugo build task and deploy the website. The build task only needs to run once, then the site is
+              ready to be served.
+            </p>
+
+            <p>Here is the log of the most recent deploy of my site in Netlify:</p>
+
+            <pre><code class="language-json">10:04:45 PM: Build ready to start
+10:04:47 PM: build-image version: 2dbd444fcdce00cf06325060a8238d5ae3e86774
+10:04:47 PM: build-image tag: v3.3.7
+10:04:47 PM: buildbot version: 7f867b365e4c3934ca5b72b9d51f0a4d1f96685d
+10:04:47 PM: Fetching cached dependencies
+10:04:47 PM: Starting to download cache of 97.7MB
+10:04:48 PM: Finished downloading cache in 926.929848ms
+10:04:48 PM: Starting to extract cache
+10:04:52 PM: Finished extracting cache in 3.635827713s
+10:04:52 PM: Finished fetching cache in 4.593745693s
+10:04:52 PM: Starting to prepare the repo for build
+10:04:52 PM: Preparing Git Reference refs/heads/master
+10:04:52 PM: Starting build script
+10:04:52 PM: Installing dependencies
+10:04:53 PM: Started restoring cached node version
+10:04:58 PM: Finished restoring cached node version
+10:04:58 PM: v10.19.0 is already installed.
+10:04:59 PM: Now using node v10.19.0 (npm v6.13.4)
+10:04:59 PM: Attempting ruby version 2.6.2, read from environment
+10:05:01 PM: Using ruby version 2.6.2
+10:05:01 PM: Using PHP version 5.6
+10:05:01 PM: Started restoring cached go cache
+10:05:01 PM: Finished restoring cached go cache
+10:05:01 PM: unset GOOS;
+10:05:01 PM: unset GOARCH;
+10:05:01 PM: export GOROOT='/opt/buildhome/.gimme/versions/go1.12.linux.amd64';
+10:05:01 PM: export PATH=&quot;/opt/buildhome/.gimme/versions/go1.12.linux.amd64/bin:${PATH}&quot;;
+10:05:01 PM: go version &gt;&amp;2;
+10:05:01 PM: export GIMME_ENV='/opt/buildhome/.gimme/env/go1.12.linux.amd64.env';
+10:05:01 PM: go version go1.12 linux/amd64
+10:05:01 PM: Installing missing commands
+10:05:01 PM: Verify run directory
+10:05:01 PM: Executing user command: hugo
+10:05:01 PM: Building sites …
+10:05:01 PM: WARN 2020/04/06 21:05:01 Found no layout for &quot;taxonomyTerm&quot;, language &quot;en&quot;, output format &quot;HTML&quot;: create a template below /layouts with one of these filenames: categories/category.terms.en.html.html, categories/terms.en.html.html, categories/list.en.html.html, categories/category.terms.html.html, categories/terms.html.html, categories/list.html.html, categories/category.terms.en.html, categories/terms.en.html, categories/list.en.html, categories/category.terms.html, categories/terms.html, categories/list.html, taxonomy/category.terms.en.html.html, taxonomy/terms.en.html.html, taxonomy/list.en.html.html, taxonomy/category.terms.html.html, taxonomy/terms.html.html, taxonomy/list.html.html, taxonomy/category.terms.en.html, taxonomy/terms.en.html, taxonomy/list.en.html, taxonomy/category.terms.html, taxonomy/terms.html, taxonomy/list.html, category/category.terms.en.html.html, category/terms.en.html.html, category/list.en.html.html, category/category.terms.html.html, category/terms.html.html, category/list.html.html, category/category.terms.en.html, category/terms.en.html, category/list.en.html, category/category.terms.html, category/terms.html, category/list.html, _default/category.terms.en.html.html, _default/terms.en.html.html, _default/list.en.html.html, _default/category.terms.html.html, _default/terms.html.html, _default/list.html.html, _default/category.terms.en.html, _default/terms.en.html, _default/list.en.html, _default/category.terms.html, _default/terms.html, _default/list.html
+10:05:01 PM: WARN 2020/04/06 21:05:01 Found no layout for &quot;taxonomyTerm&quot;, language &quot;en&quot;, output format &quot;HTML&quot;: create a template below /layouts with one of these filenames: tags/tag.terms.en.html.html, tags/terms.en.html.html, tags/list.en.html.html, tags/tag.terms.html.html, tags/terms.html.html, tags/list.html.html, tags/tag.terms.en.html, tags/terms.en.html, tags/list.en.html, tags/tag.terms.html, tags/terms.html, tags/list.html, taxonomy/tag.terms.en.html.html, taxonomy/terms.en.html.html, taxonomy/list.en.html.html, taxonomy/tag.terms.html.html, taxonomy/terms.html.html, taxonomy/list.html.html, taxonomy/tag.terms.en.html, taxonomy/terms.en.html, taxonomy/list.en.html, taxonomy/tag.terms.html, taxonomy/terms.html, taxonomy/list.html, tag/tag.terms.en.html.html, tag/terms.en.html.html, tag/list.en.html.html, tag/tag.terms.html.html, tag/terms.html.html, tag/list.html.html, tag/tag.terms.en.html, tag/terms.en.html, tag/list.en.html, tag/tag.terms.html, tag/terms.html, tag/list.html, _default/tag.terms.en.html.html, _default/terms.en.html.html, _default/list.en.html.html, _default/tag.terms.html.html, _default/terms.html.html, _default/list.html.html, _default/tag.terms.en.html, _default/terms.en.html, _default/list.en.html, _default/tag.terms.html, _default/terms.html, _default/list.html
+10:05:01 PM:                    | EN
+10:05:01 PM: +------------------+----+
+10:05:01 PM: Pages            |  4
+10:05:01 PM:   Paginator pages  |  0
+10:05:01 PM:   Non-page files   |  0
+10:05:01 PM:   Static files     |  6
+10:05:01 PM:   Processed images |  0
+10:05:01 PM:   Aliases          |  0
+10:05:01 PM:   Sitemaps         |  1
+10:05:01 PM:   Cleaned          |  0
+10:05:01 PM: Total in 4 ms
+10:05:01 PM: Skipping functions preparation step: no functions directory set
+10:05:01 PM: Caching artifacts
+10:05:01 PM: Started saving pip cache
+10:05:01 PM: Finished saving pip cache
+10:05:02 PM: Creating deploy upload records
+10:05:01 PM: Started saving emacs cask dependencies
+10:05:01 PM: Finished saving emacs cask dependencies
+10:05:01 PM: Started saving maven dependencies
+10:05:01 PM: Finished saving maven dependencies
+10:05:01 PM: Started saving boot dependencies
+10:05:01 PM: Finished saving boot dependencies
+10:05:01 PM: Started saving go dependencies
+10:05:01 PM: Finished saving go dependencies
+10:05:01 PM: Build script success
+10:05:01 PM: Starting to deploy site from 'public'
+10:05:01 PM: Creating deploy tree 
+10:05:02 PM: 5 new files to upload
+10:05:02 PM: 0 new functions to upload
+10:05:02 PM: Starting post processing
+10:05:02 PM: Post processing done
+10:05:02 PM: Site is live
+10:05:17 PM: Finished processing build request in 30.355736024s
+</code></pre>
+
+            <p>
+              This makes it extremely easy to update the site, since you don&rsquo;t need to do anything to make the latest changes live, just upload them to GitHub which is what one might do anyway
+              for version control. Within minutes your live site will be updated.
+            </p>
+
+            <h2 id="content-management-systems">Content Management Systems</h2>
+
+            <p>
+              Now, in my opinion this is the best part of this whole setup. While not exactly part of the JAMstack, static content management systems are able to add content to your website without
+              having to touch any code. It&rsquo;s a a great way to add tons of functionality to you website without having to do much.
+            </p>
+
+            <h3 id="how-it-works-1">How it works</h3>
+
+            <p>
+              Opposed to a server-side CMS like WordPress, a static CMS is not on a server. For my JAMstack site, I used <a href="https://forestry.io/">Forestry CMS</a> because it natively works with
+              Hugo. All that I had to do to integrate it into my website is create a free account and import the GitHub repository of my website.
+            </p>
+
+            <p>
+              Forestry provides a sleek user-interface where you can see and edit the content (Markdown files) of the website. Whenever a change is saved in Forestry, it pushes those changes to the
+              GitHub repository of the site. Now, because the site is connected to Netlify, the automated build is ran and the website is updated within seconds. It&rsquo;s extremely easy and useful
+              and I would recommend this to anyone using a static site generator. There are many more static CMS&rsquo;s, <a href="https://headlesscms.org/">headlesscms.org</a> has a large list of
+              them.
+            </p>
+
+            <div class="blog-post__bibliography">
+              <h4 class="blog-post__heading2">Reference List</h4>
+              <ul class="blog-post__b-list">
+                <li class="blog-post__b-ref">
+                  <p>Jamstack (no date) Jamstack | JavaScript, APIs, and Markup. [Online] [Accessed on 31st March 2020] <a href="https://jamstack.org/">https://jamstack.org/</a></p>
+                </li>
+                <li class="blog-post__b-ref">
+                  <p>JAMstack WTF (no date) WTF is JAMstack? [Online] [Accessed on 2nd April 2020] <a href="https://jamstack.wtf/">https://jamstack.wtf/</a></p>
+                </li>
+                <li class="blog-post__b-ref">
+                  <p>
+                    Potter, J. (2019) Whatis a LAMP stack? 5th February. Liquid Web. [Online] [Accessed on 2nd April 2020]
+                    <a href="https://www.liquidweb.com/kb/what-is-a-lamp-stack/">https://www.liquidweb.com/kb/what-is-a-lamp-stack/</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a class="blog-post__back" href="blog.html">Back to blog list</a>
+        </div>
+      </main>
+
+      <footer class="global-footer">
+        <nav class="global-footer__wrapper">
+          <div class="global-footer__navigation">
+            <ul class="global-footer__list">
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../index.html">Home</a>
+              </li>
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../pages/blog/blog.html">Blog</a>
+              </li>
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../pages/work/work.html">Work</a>
+              </li>
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../pages/contact/contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="global-footer__social">
+            <a class="global-footer__link" href="https://twitter.com/p_swies">Twitter</a>
+            <a class="global-footer__link" href="https://github.com/pswies1">GitHub</a>
+            <a class="global-footer__link" href="https://www.linkedin.com/in/pawel-swies-63608016b">LinkedIn</a>
+          </div>
+          <p class="global-footer__copyright">© Pawel Swies</p>
+        </nav>
+      </footer>
+    </div>
+    <script src="/js/prism.js"></script>
+  </body>
+</html>

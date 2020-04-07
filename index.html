@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Undergraduate Front-end Web Developer">
-    <meta name="keywords" content="HTML,CSS,Sass,JavaScript,JSON-LD,Developer,Designer">
-    <meta name="author" content="Pawel Swies">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Undergraduate Front-end Web Developer" />
+    <meta
+      name="keywords"
+      content="HTML,CSS,Sass,JavaScript,JSON-LD,Developer,Designer"
+    />
+    <meta name="author" content="Pawel Swies" />
     <title>Pawel Swies Web Developer</title>
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" as="font" type="font/woff" crossorigin="anonymous" href="fonts/Heebo-Regular.woff">
-    <link rel="preload" as="font" type="font/woff" crossorigin="anonymous" href="fonts/Heebo-Black.woff">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/style.css" as="style" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff"
+      crossorigin="anonymous"
+      href="fonts/Heebo-Regular.woff"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff"
+      crossorigin="anonymous"
+      href="fonts/Heebo-Black.woff"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script type="application/ld+json">
-        {
+      {
         "@context": "http://www.schema.org",
         "@type": "Person",
         "name": "Pawel Swies",
         "alternateName": "Pav Swies",
         "alumniOf": [
-            {
-             "@type": "CollegeOrUniversity",
-             "name": "Manchester Metropolitan University",
-             "sameAs": "https://www2.mmu.ac.uk/"
-            }
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Manchester Metropolitan University",
+            "sameAs": "https://www2.mmu.ac.uk/"
+          }
         ],
         "gender": "Male",
         "Description": "Front-end web developer currently living in Manchester",
@@ -31,47 +46,77 @@
         "url": "http://www.17083809.webdevmmu.uk/index.html",
         "image": "http://www.17083809.webdevmmu.uk/img/portrait.jpg",
         "sameAs": [
-            "https://twitter.com/p_swies",
-            "https://www.linkedin.com/in/pawel-swies-63608016b",
-            "https://github.com/pswies1r"
-            ]
-        }
+          "https://twitter.com/p_swies",
+          "https://www.linkedin.com/in/pawel-swies-63608016b",
+          "https://github.com/pswies1r"
+        ]
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="global__wrapper global__wrapper--light">
+      <main class="home">
+        <div class="home__wrapper">
+          <h1 class="home__title-name">Pawel Swies</h1>
+          <h2 class="home__title-dev">Front-end Web Developer</h2>
+          <img
+            class="home__portrait"
+            src="img/portrait.jpg"
+            alt="Pawel Swies Portrait"
+          />
+          <p class="home__about-me">
+            Hi, my name is Pawel and I'm a front-end web developer currently
+            living and studying in Manchester. I'm interested in all things
+            design and tech. In my spare time I'm learning about the psychology
+            of design and looking at strong influences like approaches from the
+            Bauhuas.
+          </p>
+          <nav class="home__navigation">
+            <ul class="home__list">
+              <li class="home__item">
+                <a class="home__link" href="pages/blog/blog.html"
+                  >Read my blog</a
+                >
+              </li>
+              <li class="home__item">
+                <a class="home__link" href="pages/work/work.html"
+                  >See my work</a
+                >
+              </li>
+              <li class="home__item">
+                <a class="home__link" href="pages/contact/contact.html"
+                  >Contact</a
+                >
+              </li>
+              <li class="home__item">
+                <a class="home__link" href="pages/cv/cv.html">CV</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="home__black-bar"></div>
+        </div>
+      </main>
 
-        <main class="home">
-            <div class="home__wrapper">
-                <h1 class="home__title-name">Pawel Swies</h1>
-                <h2 class="home__title-dev">Front-end Web Developer</h2>
-                <img class="home__portrait" src="img/portrait.jpg" alt="Pawel Swies Portrait">
-                <p class="home__about-me">Hi, my name is Pawel and I'm a front-end web developer currently living and studying in Manchester. I'm interested in all things design and tech. In my spare time I'm learning about the psychology of design and looking at strong influences like approaches from the Bauhuas.</p>
-                <nav class="home__navigation">
-                    <ul class="home__list">
-                        <li class="home__item"><a class="home__link" href="pages/blog/blog.html">Read my blog</a></li>
-                        <li class="home__item"><a class="home__link" href="pages/work/work.html">See my work</a></li>
-                        <li class="home__item"><a class="home__link" href="pages/contact/contact.html">Contact</a></li>
-                        <li class="home__item"><a class="home__link" href="pages/cv/cv.html">CV</a></li>
-                    </ul>
-                </nav>
-                <div class="home__black-bar"></div>
-            </div>
-        </main>
-
-        <footer class="global-footer">
-            <nav class="global-footer__wrapper">
-                <div class="global-footer__social">
-                    <a class="global-footer__link" href="https://twitter.com/p_swies">Twitter</a>
-                    <a class="global-footer__link" href="https://github.com/pswies1">GitHub</a>
-                    <a class="global-footer__link" href="https://www.linkedin.com/in/pawel-swies-63608016b">LinkedIn</a>
-                </div>
-                <p class="global-footer__copyright">© Pawel Swies</p>
-            </nav>
-        </footer>
-        
+      <footer class="global-footer">
+        <nav class="global-footer__wrapper">
+          <div class="global-footer__social">
+            <a class="global-footer__link" href="https://twitter.com/p_swies"
+              >Twitter</a
+            >
+            <a class="global-footer__link" href="https://github.com/pswies1"
+              >GitHub</a
+            >
+            <a
+              class="global-footer__link"
+              href="https://www.linkedin.com/in/pawel-swies-63608016b"
+              >LinkedIn</a
+            >
+          </div>
+          <p class="global-footer__copyright">© Pawel Swies</p>
+        </nav>
+      </footer>
     </div>
-    
-<script src="js/rotation.js"></script>
-</body>
+
+    <script src="js/rotation.js"></script>
+  </body>
 </html>

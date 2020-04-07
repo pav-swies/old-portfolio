@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="I will soon be graduating and looking for work as a web developer. I take a look at the current state of the industry and talk about my concerns." />
+    <meta name="keywords" content="HTML,CSS,Sass,Web Industry,Brexit,Developer,Designer" />
+    <meta name="author" content="Pawel Swies" />
+    <title>Using a Static Site Generator - Hugo</title>
+    <link rel="preload" href="../../css/style.css" as="style" />
+    <link rel="preload" as="font" href="../../fonts/Heebo-Regular.woff" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" as="font" href="../../fonts/Heebo-Black.woff" type="font/woff" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="/css/prism.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "image": "https://17083809.webdevmmu.uk/portfolio/img/google-structured-data-test.jpg",
+        "url": "https://17083809.webdevmmu.uk/portfolio/pages/index.html",
+        "headline": "Using a Static Site Generator - Hugo",
+        "dateCreated": "2019-10-28",
+        "datePublished": "2019-10-28",
+        "dateModified": "2019-11-12",
+        "copyrightYear": "2019",
+        "author": {
+          "@type": "Person",
+          "name": "Pawel Swies",
+          "url": "https://17083809.webdevmmu.uk/index.html"
+        },
+        "creator": {
+          "@type": "Person",
+          "name": "Pawel Swies",
+          "url": "https://17083809.webdevmmu.uk/index.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pawel Swies",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://17083809.webdevmmu.uk/img/portrait.jpg"
+          }
+        },
+        "mainEntityOfPage": "True",
+        "keywords": ["web industry", "brexit", "web design", "statistics"],
+        "genre": ["web industry"]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="global__wrapper global__wrapper--light">
+      <header class="global-header">
+        <div class="global-header__wrapper">
+          <p class="global-header__title">Pawel Swies</p>
+          <nav class="global-header__navigation">
+            <ul class="global-header__list">
+              <li class="global-header__item">
+                <a class="global-header__link" href="../../index.html">Home</a>
+              </li>
+              <li class="global-header__item">
+                <a class="global-header__link" href="blog.html">Blog</a>
+              </li>
+              <li class="global-header__item">
+                <a class="global-header__link" href="../work/work.html">Work</a>
+              </li>
+              <li class="global-header__item">
+                <a class="global-header__link" href="../contact/contact.html">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="blog-post">
+        <div class="blog-post__wrapper">
+          <h2 class="blog-post__title">Using a Static Site Generator - Hugo</h2>
+          <p class="blog-post__date">29/03/2020</p>
+
+          <div class="blog-post__text">
+            <p>Demonstrator - My Hugo website – <a href="https://www.pawelswies.com/">pawelswies.com</a></p>
+            <p class="blog-post__intro">
+              <span class="blog-post__dropcap">I</span>t may seem like static site generators are for those who don’t code, and simply spit out a website for you to add your content to, and while this
+              is one use case for them, static site generators also a powerful tool for developers creating sites from scratch.
+            </p>
+            <p>
+              Four years ago, Matt Biilmann
+              <a href="(https://www.smashingmagazine.com/2015/11/modern-static-website-generators-next-big-thing/)">(2015)</a>
+              predicted that static site generators are the next big thing, and he was right. Thanks to their features and speed, static generators have become increasingly popular. Especially now
+              that online traffic has risen
+              <a href="https://www.statista.com/statistics/1104108/online-shopping-change-in-transaction-rate-traffic-corona-virus-france/">(Statista, 2020)</a>
+              due to the outbreak, it is important to keep sites fast. In a short blog post, Eric Meyer
+              <a href="https://meyerweb.com/eric/thoughts/2020/03/22/get-static/">(2020)</a>
+              argues that sites that have important information on them should go static
+            </p>
+
+            <blockquote>
+              <p>
+                “because too many sites are already crashing because their CMSes can’t keep up with the traffic surges”.
+              </p>
+            </blockquote>
+
+            <p>
+              There are many static website generators to choose from;
+              <a href="https://www.staticgen.com/">staticgen.com</a> has a list of most of them, ranking them on popularity and providing more information about each one. I chose Hugo as it’s very
+              well <a href="https://gohugo.io/">documented</a> and since it’s one of the most popular site generators, there are many other resources and community forums, so learning about it and
+              troubleshooting is very easy.
+            </p>
+
+            <h2 id="installing-hugo">Installing Hugo</h2>
+
+            <p>
+              Getting started with Hugo is simple. On the website, there are instructions on multiple ways of installing it. Using
+              <a href="https://brew.sh/">Homebrew</a>, I simply used the <code>brew install hugo</code> command and once the installation finished, I was ready to go. All the ways of installing Hugo,
+              including the way I did it can be found on <a href="https://gohugo.io/getting-started/installing/">Hugo’s installing page</a>.
+            </p>
+
+            <h2 id="creating-a-new-hugo-website">
+              Creating a New Hugo Website
+            </h2>
+
+            <p>
+              Hugo is used purely in the command line. There are many commands that do many things, however I’ve only needed to use just a few commands which are easy to remember.
+            </p>
+
+            <h3 id="hugo-new-site-example">
+              <code>hugo new site example</code>
+            </h3>
+
+            <p>
+              This command will generate the boilerplate of a Hugo site with all default folders and config files. In this instance, it will all live in a folder called “example&rdquo; as anything
+              that comes after <code>new site</code> is the name of the folder the site will be generated in. This purely generates the folders and the config files, and no HTML or CSS is generated.
+              Hugo supports themes, which are basically pre-made websites that can be downloaded into a new Hugo site and customised to the likes of the user. This can be useful to those who need a
+              quick starter website or those who don’t know how to code. Today I will focus on building a Hugo site from scratch, but it’s worth mentioning that downloading a theme and seeing how it’s
+              put together is a great way of seeing how Hugo works.
+            </p>
+
+            <h3 id="hugo-new-blog-post-md">
+              <code>hugo new blog-post.md</code>
+            </h3>
+
+            <p>
+              This creates a new Markdown file called blog-post in the content folder. Files can be created manually, however a new file generated through Hugo is automatically generated with front
+              matter at the top of the file, which includes meta data such as the date the file was created and the title of the page. The default front matter looks like this:
+            </p>
+
+            <pre><code class="language-json">---
+title: &quot;Blog Post&quot;
+date: 2020-03-29T21:05:42+01:00
+draft: true
+---
+</code></pre>
+
+            <p>
+              The front matter can be customised to include more information, such as tags, description and category to name a few. The full list of pre-defined front matter variables can be found on
+              <a href="https://gohugo.io/content-management/front-matter">this page</a>. The variables aren’t limited to the predefined ones; the user can also define their own to suit their needs.
+            </p>
+
+            <p>
+              The Markdown file is essentially what is displayed on the page, and the information about it, but this alone doesn’t create a web page because there&rsquo;s no code. For the new page to
+              exist and use the information in the Markdown file, a template HTML file needs to be created. In the layouts folder, a new folder called “_default” needs to be created, and inside of
+              that a new file called single.html also needs to be created. This file is the template for all pages that are not the index pages.
+            </p>
+
+            <p>Here is the single page template for my Hugo site:</p>
+
+            <pre><code class="language-html">{{ define &quot;main&quot; }}
+
+{{ partial &quot;header.html&quot; . }}
+
+&lt;section class=&quot;post&quot;&gt;
+    &lt;div class=&quot;post__wrap wrapper&quot;&gt;
+        &lt;div class=&quot;post__heading&quot;&gt;
+            &lt;h1 class=&quot;post__title&quot;&gt;{{ .Title }}&lt;/h1&gt; &lt;!-- Grabs title from Markdown --&gt;
+            &lt;p class=&quot;post__date&quot;&gt;{{ .PublishDate.Format &quot;January 2, 2006&quot; }}&lt;/p&gt; &lt;!-- Grabs date from Markdown and prints it in &quot;Month Day, Year&quot; format --&gt;
+        &lt;/div&gt;
+        {{ .Content }} &lt;!-- Grabs content from Markdown --&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+{{ end }}
+</code></pre>
+
+            <p>
+              This HTML will be generated for each new page. The
+              <code>{{ .Title }}</code> grabs the title of the page from the Markdown file, and prints it on the site. The same goes for the date, however here I use a custom format setting that makes
+              the date display in a specific format. There are multiple ways to format dates, some examples can be seen in <a href="https://gohugo.io/functions/format/">Hugo’s documentation</a>. To
+              display the content from the Markdown file, <code>{{ .Content }}</code> has to be placed wherever you want the content to be. Without this, the content will simply not be displayed. Note
+              that the <code>{{ .Content }}</code> tag isn’t wrapped in a semantic HTML tag. This is because those tags are automatically generated based on the MD file.
+            </p>
+
+            <p>
+              It’s important to note that new pages don’t have to use the single page template. Each page can use a custom layout template and content can be hardcoded onto the page rather than using
+              content from the MD file.
+            </p>
+
+            <p>
+              Now, Hugo has a template to generate a page from and to place the content on to it from the Markdown file, however there is no base HTML page structure with the head, doctype etc. This
+              is where the baseof.html file in the default layouts folder file comes in. This file is the template that wraps every page and contains the base HTML structure.
+            </p>
+
+            <p>Here is an example from my site:</p>
+
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;{{ .Description }}&quot;&gt; &lt;!-- Grabs description from Markdown --&gt;
+    &lt;meta name=&quot;date&quot; content=&quot;{{ .Date }}&quot;&gt; &lt;!-- Grabs date from Markdown --&gt;
+    &lt;title&gt;{{ .Title }}&lt;/title&gt; &lt;!-- Grabs title from Markdown --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/style.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;/css/prism.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    {{ block &quot;main&quot; . }}
+
+    {{ end }}
+
+    {{ partial &quot;footer.html&quot; . }} &lt;!-- Grabs footer partial --&gt;
+
+&lt;/body&gt;
+&lt;script src=&quot;/js/prism.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <p>
+              A baseof file is very useful as it contains a template for the head that works on all pages thanks to variables. Every time a new page is generated, the <code>{{ }}</code> variables pull
+              the metadata from the MD file and automatically fill it in the head. You can also see that I include the footer partial inside the body, so that the footer shows on all pages.
+            </p>
+
+            <h3 id="hugo-server"><code>hugo server</code></h3>
+
+            <p>
+              Hugo has live reloading built in, meaning that when this command in ran, Hugo locally hosts the website and refreshes it whenever a change is saved. There are many “flags” that can be
+              added when running this command, but the only one I use is
+              <code>-D</code> which makes draft pages also show up on the site. Draft pages have the <code>draft</code> setting set to <code>true</code> in their Markdown file. When the site is
+              published, these draft pages don’t show up, however seeing them when working on the website is useful.
+            </p>
+
+            <h2 id="finishing-up">Finishing up</h2>
+
+            <h3 id="hugo"><code>hugo</code></h3>
+
+            <p>
+              Before the site can be deployed onto a server, it needs to be rendered by Hugo so that a browser can display it. Simply using the <code>hugo</code> command will swiftly build the website
+              into a “public” folder. Now, the contents of that folder can finally be deployed onto a server.
+            </p>
+            <div class="blog-post__bibliography">
+              <h4 class="blog-post__heading2">Reference List</h4>
+              <ul class="blog-post__b-list">
+                <li class="blog-post__b-ref">
+                  <p>
+                    Biilmann, M. (2015) Why Static Site Generators Are The Next Big Thing. 2nd November. Smashing Magazine. [Online] [Accessed on 30th March 2020]
+                    <a href="https://www.smashingmagazine.com/2015/11/modern-static-website-generators-next-big-thing/"
+                      >https://www.smashingmagazine.com/2015/11/modern-static-website-generators-next-big-thing/</a
+                    >
+                  </p>
+                </li>
+                <li class="blog-post__b-ref">
+                  <p>
+                    Meyer, E. (2020) Get Static. 22nd March. Meyerweb. [Online] [Accessed on 30th March 2020]
+                    <a href="https://meyerweb.com/eric/thoughts/2020/03/22/get-static/">https://meyerweb.com/eric/thoughts/2020/03/22/get-static/</a>
+                  </p>
+                </li>
+                <li class="blog-post__b-ref">
+                  <p>
+                    Statista (2020) E-commerce activity development after the coronavirus (Covid-19) outbreak in France as of March 13, 2020, by transaction rate and traffic*. 27th March. [Online]
+                    [Accessed on 30th March 2020]
+                    <a href="https://www.statista.com/statistics/1104108/online-shopping-change-in-transaction-rate-traffic-corona-virus-france/"
+                      >https://www.statista.com/statistics/1104108/online-shopping-change-in-transaction-rate-traffic-corona-virus-france/</a
+                    >
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a class="blog-post__back" href="blog.html">Back to blog list</a>
+        </div>
+      </main>
+
+      <footer class="global-footer">
+        <nav class="global-footer__wrapper">
+          <div class="global-footer__navigation">
+            <ul class="global-footer__list">
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../index.html">Home</a>
+              </li>
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../pages/blog/blog.html">Blog</a>
+              </li>
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../pages/work/work.html">Work</a>
+              </li>
+              <li class="global-footer__item">
+                <a class="global-footer__link" href="../../pages/contact/contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="global-footer__social">
+            <a class="global-footer__link" href="https://twitter.com/p_swies">Twitter</a>
+            <a class="global-footer__link" href="https://github.com/pswies1">GitHub</a>
+            <a class="global-footer__link" href="https://www.linkedin.com/in/pawel-swies-63608016b">LinkedIn</a>
+          </div>
+          <p class="global-footer__copyright">© Pawel Swies</p>
+        </nav>
+      </footer>
+    </div>
+    <script src="/js/prism.js"></script>
+  </body>
+</html>
